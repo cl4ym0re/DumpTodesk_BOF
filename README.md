@@ -7,7 +7,9 @@
 
 ![image](todesk.png)  
 
-之后正常下载test.bin后查找设备代码，临时密码等
+之后正常下载test.bin后查找设备代码，临时密码等,实战截图:  
+
+![image](test.png)  
 <h2>参考</h2>
 https://github.com/yangliukk/FindToDeskPass
 
